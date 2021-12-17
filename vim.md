@@ -85,6 +85,27 @@ git checkout HEAD . 或者 git checkout HEAD <file> 命令时，会用 HEAD 指�
 
 ```
 git reset --hard commitid// 工作区和暂存区都要恢复到和这次commitid一模一样的状态。
-git rm -- filename //将commit文件放到暂存区
+git rm -- filename //将commit文件直接删除工作区的文件
+git rm --cache -- filename //将删除的文件放到工作空间
+```
+
+##### 紧急修改bug
+
+```
+git stash //可以将当前的修改放到一个工作区，栈结构
+git pop //或者git apply将之前暂存的恢复到当前区域。apply信息还会被保留，但是pop以后都会被删除
+git list
+```
+
+##### 添加远端地址
+
+备份到远端
+
+```
+git remote add origin sshAddress //添加远端仓库的地址
+git push -u origin master
+git push [alias] [branch] //令将你的 [branch] 分支推送成为 [alias] 远程仓库上的 [branch] 分支
+git fetch //下载远端的分支
+
 ```
 
